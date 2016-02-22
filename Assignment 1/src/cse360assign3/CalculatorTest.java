@@ -1,23 +1,24 @@
 package cse360assign3;
-/**
+/** This is test case for Calculator Class
  * pin:508
  * @author Haonan Li
  * @version Feb, 22, 2016
+ * Github URL: https://github.com/scpi0017585/Haonan-Li.git
  */
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 public class CalculatorTest {
-		@Test
-		public void TestCalculator() 
+		@Test 
+		public void TestCalculator()     // test the constructor if it is null
 		{
 			Calculator myCalculator = new Calculator();
 			int test = myCalculator.getTotal();
 			assertNotNull( test );
 		}
 		@Test
-		public void testGetTotal()
+		public void testGetTotal()      // test the getTotal if it is return total
 		{
 			Calculator myCalculator = new Calculator();
 			myCalculator.add( 3 );
@@ -27,7 +28,7 @@ public class CalculatorTest {
 			assertEquals( totalTest , 2);
 		}
 		@Test
-		public void testAdd() 
+		public void testAdd()          // test the method add if it is function well
 		{
 			Calculator myCalculator = new Calculator();
 			myCalculator.add( 3 );
@@ -36,7 +37,7 @@ public class CalculatorTest {
 			assertEquals( addTest , 7 );
 		}
 		@Test
-		public void testSubstract()
+		public void testSubtract()		// test the method subtract 
 		{
 			Calculator myCalculator = new Calculator();
 			myCalculator.subtract( 4 );
@@ -44,7 +45,7 @@ public class CalculatorTest {
 			assertEquals( subtractTest , -4 );
 		}
 		@Test
-		public void testMultiply()
+		public void testMultiply()		// test the method multiply
 		{
 			Calculator myCalculator = new Calculator();
 			myCalculator.add( 3 );
@@ -53,7 +54,7 @@ public class CalculatorTest {
 			assertEquals( multiplyTest , 12 );
 		}
 		@Test
-		public void testDivide()
+		public void testDivide()		// test the method divide
 		{
 			Calculator myCalculator = new Calculator();
 			myCalculator.add( 6 );
@@ -66,9 +67,16 @@ public class CalculatorTest {
 			assertEquals( divideTest , 1 );
 		}
 		@Test
-		public void testGetHistory()
+		public void testGetHistory()	// test the method get history if it is return history correctly 
 		{
-			fail("Not yet implemented");
+			Calculator myCalculator = new Calculator();
+			myCalculator.add( 4 );
+			myCalculator.subtract( 3 );
+			myCalculator.divide( 2 );
+			myCalculator.multiply( 1 );
+			String history = myCalculator.getHistory();
+			assertEquals( history , "0 + 4 - 3 / 2 * 1");
+			
 		}
 	}
 
